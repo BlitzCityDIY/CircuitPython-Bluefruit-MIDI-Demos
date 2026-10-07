@@ -17,7 +17,6 @@ midi = adafruit_midi.MIDI(midi_in=usb_midi.ports[0], in_channel=0)
 pixels = neopixel.NeoPixel(board.NEOPIXEL, 10, brightness=0.2, auto_write=True)
 
 PINK = (255, 0, 50)
-PURPLE = (180, 0, 255)
 OFF = (0, 0, 0)
 
 while True:
@@ -27,5 +26,5 @@ while True:
         if isinstance(msg, NoteOn):
             pixels.fill(PINK)
         if isinstance(msg, NoteOff):
-            pixels.fill(PURPLE)
+            pixels.fill(OFF)
         print(msg)
